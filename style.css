@@ -1,0 +1,422 @@
+html, body {
+    overflow-x: hidden;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+
+}
+
+
+
+
+/* Background layer */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.river-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+    animation: flow 10s infinite linear;
+}
+
+/* Animation for the flowing river */
+@keyframes flow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.trump {
+    position: absolute;
+    top: 35vh;
+    right: 0;
+    
+    animation: swim 7s linear infinite;
+    z-index: 2;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(100%) translateY(0); 
+    }
+    100% {
+        transform: translateX(-1000%) ;
+    }
+}
+
+.trump img {
+        
+            height: 20vh; 
+        }
+
+
+
+/* Tree layer */
+.tree-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Ensure trees are above the river */
+}
+
+.tree-layer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Frontmost layer */
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: 2vh;
+    z-index: 4; /* Ensure the front image is on top */
+}
+
+.front-layer {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 3;
+}
+
+
+
+.section-resource {
+    position: absolute; /* Allows positioning relative to the container */
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    align-items: center;
+    top: 44vh; /* Adjust based on your layout needs */
+    left: 30vw; /* Adjust based on your layout needs */
+    font-size: 1em;
+    z-index: 50;
+}
+
+.section-resource-pika {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10%;
+    font-size: 1em;
+    color: aliceblue;
+    text-shadow: 20px 20px 20px #0c0aaf;
+    left: 10vw;
+    align-items: center;
+    z-index: 50;
+}
+
+/* _____________________________________________________________________________________________ */
+
+
+/* _____________________________________________________________________________________________ */
+
+
+/* @media (max-width:460px) {
+    .btn-toggle__checkbox {
+        font-size: .5em;
+    }
+
+} */
+
+
+
+.btn-toggle {
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-toggle__toggle {
+  background-color: #43ca1a;
+  border-radius: 2em;
+  flex-shrink: 0;
+  width: 4em;
+  height: 2sem;
+  display: flex;
+  border: 2px solid #000;
+}
+
+.btn-toggle__toggle-dot {
+  background-color: #2a0a66;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  margin-top: .125em;
+  margin-left: .125em;
+  transition: all 0.4s cubic-bezier(0.35, 1.5, 0.6, 1);
+  transform: translateX(0em) rotate(0.001deg);
+}
+
+.btn-toggle__p {
+  margin-bottom: 0;
+  font-size: 3em;
+  line-height: 1;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.4s cubic-bezier(20, 1, 0.6, 1);
+  background-color: rgba(20, 2, 100, 0);
+}
+
+.btn-toggle__p2 {
+  margin-bottom: 0;
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: rgb(20, 2, 100) 0.4s cubic-bezier(20, 1, 0.6, 1);
+  text-shadow: 23px 23px 40px  #460237, 10 10 10 rgb(23, 1, 124);
+  
+}
+
+.btn-toggle__checkbox {
+  opacity: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 33;
+}
+
+
+
+/* Animations based on :checked */
+
+.section-resource:has(input[type="checkbox"]:checked) {
+  /* background: #301139; */
+}
+
+.btn-toggle:has(input[type="checkbox"]:checked) .btn-toggle__toggle-dot {
+  transform: translateX(1.6em) rotate(0.001deg);
+}
+
+.btn-toggle:has(input[type="checkbox"]:checked) .btn-toggle__p {
+  color: #3a0996;
+  
+}
+
+
+
+/* .containerCrazy {
+            position: absolute;
+            top: 0;
+            left: 20vh;
+            display: flex;
+            height: 100%;
+            transform-style: preserve-3d;s
+            z-index: 100;
+    
+        } */
+
+/* .text1, .text2, .text3, .text4 {
+    position: absolute;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 100;
+    transform: translate(-20%, -70%);
+}
+
+
+.text1 {
+    top: 50%;
+    left: 4%;
+    color: #b86a12;
+    text-shadow: 19px 19px 19px rgb(26, 7, 201);
+    animation: spin 5s infinite linear;
+}
+
+.text2 {
+    top: 52%;
+    left: 6%;
+    color: #08ec3a;
+    text-shadow: 19px 19px 19px rgb(24, 24, 27);
+    animation: spin 10s infinite linear;
+}
+
+.text3 {
+    top: 54%;
+    left: 8%;
+    color: #1f1b16;
+    text-shadow: 19px 19px 19px rgb(221, 35, 11);
+    animation: spin 15s infinite linear;
+}
+
+.text4 {
+    top: 56%;
+    left: 10%;
+    color: #e4e705;
+    text-shadow: 19px 19px 19px rgb(14, 218, 218);
+    animation: spin 5s infinite linear;
+} */
+
+.bird {
+    bottom: 0em;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    position: absolute;
+    animation: pika-smooth 10s linear infinite;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.bird img {
+    width: 12em;
+    height: auto;
+    max-width: 100%;
+    
+}
+
+@media (max-width:1300px) {
+    .bird img {
+        width: 8em;
+        height: auto;
+    }
+    .trump img {
+        width: 8em;
+        height: auto;
+
+    }
+
+    .background img {
+        width: 100em;
+    }
+
+    .section-resource {
+        font-size: 1em;
+        
+    }
+
+    .section-resource-pika {
+        font-size: 1em;
+    }
+}
+
+
+@media (max-width:800px) {
+    .bird img {
+        width: 5em;
+        height: auto;
+    }
+    .trump img {
+
+        transform: translateY(3em);
+        width: 5em;
+        height: auto;
+
+    }
+
+    .section-resource {
+        font-size: .5em;
+        
+    }
+
+    .section-resource-pika {
+        font-size: .5em;
+    }
+}
+
+@media (max-width:680px) {
+    .bird img {
+        width: 4em;
+        height: auto;
+    }
+    .trump img {
+        transform: translateY(2em);
+        width: 4em;
+        height: auto;
+    }
+
+    .section-resource {
+        font-size: .4em;
+        
+    }
+
+    .section-resource-pika {
+        font-size: .4em;
+    }
+
+    /* .btn-toggle__p2 {
+        font-size: .5em;
+    } */
+}
+
+.fast-pika {
+    animation-duration: 2s; /* Fast speed */
+}
+
+.slow-pika {
+    animation-duration: 5s; /* Slow speed */
+}
+
+@keyframes pika-smooth {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+/* Keyframes for spinning animations */
+@keyframes spin {
+    0% { 
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+    25% { 
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg) scale(1.1);
+    }
+    50% { 
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg) scale(1.2);
+    }
+    75% { 
+        transform: rotateX(270deg) rotateY(270deg) rotateZ(180deg) scale(1.1);
+    }
+    100% { 
+        transform: rotateX(360deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+}
+

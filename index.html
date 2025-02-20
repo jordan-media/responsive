@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layered Composition</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div class="containerCrazy">
+        <audio id="myAudio" preload="auto" >
+            <source src="./imagesandshit/backmusic.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+       
+        <div class="bird"> <img src="./imagesandshit/5-5.gif" alt="bird"></div>
+    </div>
+    <div class="container">
+        <div class="background">
+           <img src="./imagesandshit/River.jpg" alt="Flowing River" class="river-layer">
+        </div>
+        <div class="trump">
+            <img src="./imagesandshit/DrowningTrumpChicken.gif" alt="trumpchicken">
+        </div>
+        <div class="trees">
+            
+            <img src="./imagesandshit/Jordan_Asseff_Assignment1_Original.png" alt="Trees" class="tree-layer">
+        </div>
+        <div class="front">
+            
+            <img src="./imagesandshit/Jordan_Asseff_Assignment1_outline.png" alt="My Image" class="front-layer">
+        </div>
+        <div class="section-resource">
+            <div class="btn-toggle" data-action="river-speed">
+              <div class="btn-toggle__toggle">
+                <div class="btn-toggle__toggle-dot"></div>
+              </div><p class="btn-toggle__p">Increase <br>River Speed</p>
+              <input type="checkbox" class="btn-toggle__checkbox">
+            </div>
+        </div>
+        <div class="section-resource-pika">
+            <div class="btn-toggle" data-action="pika-speed">
+                <div class="btn-toggle__toggle">
+                  <div class="btn-toggle__toggle-dot"></div>
+                </div><p class="btn-toggle__p2">ピカチュウのスピード！</p>
+                <input type="checkbox" class="btn-toggle__checkbox">
+              </div>
+        </div>
+        
+        
+    </div>
+
+  
+    <script src="script.js"></script>
+</body>
+
+</html>
